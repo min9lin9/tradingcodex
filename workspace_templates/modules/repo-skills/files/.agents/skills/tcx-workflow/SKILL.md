@@ -103,12 +103,11 @@ Illustrative ownership examples, not a mandatory sequence:
 - Keep provider, as-of time, coverage, warnings, conflicts, uncertainty, and
   missing evidence visible. Distinguish sourced facts, analysis, and scenario
   assumptions in natural prose where that distinction matters.
-- For a final synthesis, recommendation, portfolio/risk result, or other
-  high-consequence judgment, use a short natural structure that separately
-  identifies verified facts and sources, analysis and implications, key
-  assumptions, and uncertainty, gaps, disagreements, or blocked actions. Do
-  not require per-sentence tags or impose this structure on narrow factual
-  answers or intermediate role output.
+- Explain research results in enough detail for the user to understand the
+  supporting facts and source posture, analysis, implications, assumptions,
+  contrary evidence, uncertainty, both readiness axes, and useful next actions.
+  Choose the presentation naturally for the request; do not require a fixed
+  template, headings, sentence tags, or claim count.
 - For a forecast, recommendation, valuation, portfolio decision, or other
   high-consequence judgment, add only what the structure needs: a relevant base
   rate or comparison (or the gap), base/upside/downside or appropriate
@@ -129,20 +128,21 @@ Illustrative ownership examples, not a mandatory sequence:
   user-requested durable report needs it. Do not save simple facts, status,
   single-artifact restatements, or follow-ups with no new judgment.
 - Synthesis is a point-in-time integrated judgment, not a role-by-role digest.
-  Directly answer the question and connect 3–7 load-bearing claims from evidence
-  to implication to judgment. Preserve conflicts, strongest contrary evidence,
+  Directly answer the question and connect the load-bearing evidence to its
+  implications and judgment. Preserve conflicts, strongest contrary evidence,
   uncertainty, update triggers, invalidation, readiness, possible next steps,
-  and blocked actions. Add specialized modules only when applicable; do not
-  force headings or prose tags.
+  and blocked actions.
 - After an accepted decision-grade synthesis with future evaluation value,
   autonomously call `record_judgment_snapshot`. Do not freeze factual or
   screening synthesis. A JudgmentSnapshot is evidence-only, not user adoption
   or execution permission.
-- The final chat answer must stand alone. Give the conclusion, decisive evidence
-  and implications, contrary evidence and uncertainty, both readiness axes, and
-  useful next actions at suitable detail. Never narrate the report's table of
-  contents. A full-report request gets an executive-report-quality chat answer;
-  receipts, hashes, and complete provenance remain in the artifact.
+- The final chat answer must stand alone and explain the research results in
+  detail proportionate to their materiality. Never narrate the report's table
+  of contents. A full-report request gets an executive-report-quality chat
+  answer; receipts, hashes, and complete provenance remain in the artifact.
+- When a concise answer best matches the request and supporting research has
+  already been completed, offer to provide a deep, detailed explanation based
+  on that research. Do not repeat the offer when the answer is already detailed.
 - After an authenticated Head Manager `synthesis_report` receipt, link its
   saved report in the final reply. Resolve the returned `path` against the
   current workspace root and use its service-returned path:

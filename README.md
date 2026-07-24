@@ -136,6 +136,10 @@ URL is printed by `./tcx service status`; the release default is
 `http://127.0.0.1:48267/`. End users do not need Node, npm, or a separate
 frontend server.
 
+The Head Manager inherits the active Codex model and reasoning setting. For
+full research workflows, we recommend `gpt-5.6-sol` with `high` or `xhigh`
+reasoning.
+
 ### Start with skills
 
 Start with the skill that matches the work. Each example is a prompt you can

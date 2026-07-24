@@ -91,8 +91,9 @@ def test_fixed_role_prompts_use_natural_evidence_distinctions() -> None:
     ).read_text(encoding="utf-8")
     flat_workflow = " ".join(workflow.split())
     flat_framing = " ".join(framing.split())
-    assert "verified facts and sources, analysis and implications, key" in workflow
-    assert "Do not require per-sentence tags" in " ".join(workflow.split())
+    assert "Explain research results in enough detail" in workflow
+    assert "do not require a fixed template, headings, sentence tags, or claim count" in flat_workflow
+    assert "offer to provide a deep, detailed explanation based on that research" in flat_workflow
     assert "relevant base\n  rate or comparison" in workflow
     assert "current action/readiness\n  limit" in workflow
     assert "[Research Framing playbook](playbooks/research-framing.md)" in workflow

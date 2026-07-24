@@ -160,10 +160,11 @@ private model reasoning and unaccepted findings are never surfaced.
 
 For final synthesis, forecasts, recommendations, valuations, portfolio/risk
 results, and high-consequence judgments, the canonical `tcx-workflow` skill
-uses a natural evidence structure plus only the applicable base rate or
-comparison, scenarios, assumptions/falsifier, contrary evidence, and update or
-readiness limits. It does not impose sentence tags or a template on narrow
-answers or intermediate role work.
+explains the research results with enough detail to understand the supporting
+evidence, analysis, implications, assumptions, contrary evidence, uncertainty,
+readiness, and useful next actions. It chooses presentation naturally for the
+request rather than imposing a template, headings, sentence tags, or claim
+count.
 
 Broad analysis is not a fixed template. A factual company profile may need one
 fundamental role. For a horizon-sensitive directional forecast, Head Manager
