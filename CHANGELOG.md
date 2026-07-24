@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+## 2.1.3 - 2026-07-25
+
+- Reduce always-loaded Head Manager and shared source-routing guidance, move
+  optional context and domain rules to their owning workflow resources, remove
+  producer-only dataset tools from the Head Manager, and stop additional
+  research when its expected decision value no longer justifies its cost.
+- Refresh README onboarding around the dynamic research team, reusable
+  knowledge, and skill entrypoints, and recommend `gpt-5.6-sol` with `high` or
+  `xhigh` reasoning for full Head Manager research workflows.
+- Let research answers choose a natural presentation while explaining material
+  results in sufficient detail, and offer a deep explanation from completed
+  research when the user's initial request is best answered concisely.
+
 ## 2.1.2 - 2026-07-24
 
 - Treat ASCII skill-name case and normalized whitespace layout as presentation

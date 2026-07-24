@@ -85,15 +85,21 @@ def test_fixed_role_prompts_use_natural_evidence_distinctions() -> None:
         assert "Narrative evidence discipline:" not in prompt
 
     workflow = (ROOT / "workspace_templates/modules/repo-skills/files/.agents/skills/tcx-workflow/SKILL.md").read_text(encoding="utf-8")
+    head = (
+        ROOT
+        / "workspace_templates/modules/codex-base/files/.codex/prompts/base_instructions/head-manager.md"
+    ).read_text(encoding="utf-8")
     framing = (
         ROOT
         / "workspace_templates/modules/repo-skills/files/.agents/skills/tcx-workflow/playbooks/research-framing.md"
     ).read_text(encoding="utf-8")
     flat_workflow = " ".join(workflow.split())
+    flat_head = " ".join(head.split())
     flat_framing = " ".join(framing.split())
     assert "Explain research results in enough detail" in workflow
     assert "do not require a fixed template, headings, sentence tags, or claim count" in flat_workflow
-    assert "offer to provide a deep, detailed explanation based on that research" in flat_workflow
+    assert "a concise final answer must offer to provide a deep, detailed explanation" in flat_head
+    assert "offer to provide a deep, detailed explanation" not in flat_workflow
     assert "relevant base\n  rate or comparison" in workflow
     assert "current action/readiness\n  limit" in workflow
     assert "[Research Framing playbook](playbooks/research-framing.md)" in workflow

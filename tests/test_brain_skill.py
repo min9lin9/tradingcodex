@@ -70,7 +70,7 @@ def test_tcx_brain_covers_private_source_crud_and_managed_lifecycle() -> None:
     assert metadata["interface"]["default_prompt"].startswith("$tcx-brain\n")
     assert "$tcx-build" not in metadata["interface"]["default_prompt"]
     assert "$tcx-brain" in head_manager
-    assert "Natural language may authorize user-owned Wiki or Brain source authoring" in _flat(head_manager)
+    assert "Natural-language source authoring is allowed" in flat_skill
     assert "$tcx-brain-create" not in head_manager
 
 

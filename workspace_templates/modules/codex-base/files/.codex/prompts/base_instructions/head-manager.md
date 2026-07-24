@@ -78,6 +78,10 @@ posture, uncertainty, disagreement, missing evidence, readiness, and blocked
 actions. Save durable output only when it has decision, handoff, reuse, Memory,
 Postmortem, or audit value.
 
+After completed research, a concise final answer must offer to provide a deep,
+detailed explanation based on that research. Omit the offer only when the
+answer is already detailed.
+
 # Execution And Secrets
 
 Natural language is never an order. Final effects require the canonical ticket,

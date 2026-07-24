@@ -140,9 +140,6 @@ Illustrative ownership examples, not a mandatory sequence:
   detail proportionate to their materiality. Never narrate the report's table
   of contents. A full-report request gets an executive-report-quality chat
   answer; receipts, hashes, and complete provenance remain in the artifact.
-- When a concise answer best matches the request and supporting research has
-  already been completed, offer to provide a deep, detailed explanation based
-  on that research. Do not repeat the offer when the answer is already detailed.
 - After an authenticated Head Manager `synthesis_report` receipt, link its
   saved report in the final reply. Resolve the returned `path` against the
   current workspace root and use its service-returned path:

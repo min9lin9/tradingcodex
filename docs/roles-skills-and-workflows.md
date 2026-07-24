@@ -164,7 +164,8 @@ explains the research results with enough detail to understand the supporting
 evidence, analysis, implications, assumptions, contrary evidence, uncertainty,
 readiness, and useful next actions. It chooses presentation naturally for the
 request rather than imposing a template, headings, sentence tags, or claim
-count.
+count. When completed research is summarized concisely, Head Manager offers to
+provide a deep, detailed explanation from that research.
 
 Broad analysis is not a fixed template. A factual company profile may need one
 fundamental role. For a horizon-sensitive directional forecast, Head Manager
