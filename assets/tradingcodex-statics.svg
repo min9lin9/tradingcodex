@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 680" role="img" aria-labelledby="title desc">
+  <title id="title">TradingCodex static memory and context</title>
+  <desc id="desc">Research Memory, Knowledge Wiki, Investment Brain, and Decision Memory remain as reusable context for future investment work.</desc>
+  <style>
+    .title { font-family: Arial, sans-serif; font-size: 36px; font-weight: 700; }
+    .subtitle { font-family: Arial, sans-serif; font-size: 19px; font-weight: 400; }
+    .card-title { font-family: Arial, sans-serif; font-size: 23px; font-weight: 700; }
+    .body { font-family: Arial, sans-serif; font-size: 17px; font-weight: 400; }
+    .label { font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 1.4px; }
+  </style>
+
+  <rect width="1400" height="680" rx="28" fill="#0b1627"/>
+  <path d="M0 135 H1400 M0 340 H1400 M0 545 H1400" stroke="#b5cfff" stroke-opacity="0.05"/>
+  <path d="M110 0 V680 M460 0 V680 M810 0 V680 M1160 0 V680" stroke="#b5cfff" stroke-opacity="0.05"/>
+
+  <text x="70" y="72" fill="#f4f8ff" class="title">Statics: the context that stays with you</text>
+  <text x="70" y="108" fill="#afc1d8" class="subtitle">The current run is dynamic. Useful memory remains readable, reusable, and yours.</text>
+
+  <g>
+    <rect x="54" y="155" width="610" height="205" rx="22" fill="#0e1c2e" stroke="#56dfff" stroke-width="2"/>
+    <circle cx="96" cy="202" r="17" fill="#56dfff"/>
+    <text x="130" y="210" fill="#f4f8ff" class="card-title">Research Memory</text>
+    <text x="96" y="255" fill="#c0d0e3" class="body">Snapshots, datasets, reports, forecasts, decisions,</text>
+    <text x="96" y="282" fill="#c0d0e3" class="body">calculations, provenance, and source/as-of posture.</text>
+    <text x="96" y="327" fill="#73e2d0" class="label">EVIDENCE THAT SURVIVES THE CHAT</text>
+  </g>
+
+  <g>
+    <rect x="736" y="155" width="610" height="205" rx="22" fill="#0e1c2e" stroke="#b493ff" stroke-width="2"/>
+    <circle cx="778" cy="202" r="17" fill="#b493ff"/>
+    <text x="812" y="210" fill="#f4f8ff" class="card-title">Knowledge Wiki</text>
+    <text x="778" y="255" fill="#c0d0e3" class="body">Reusable company, industry, product, technology,</text>
+    <text x="778" y="282" fill="#c0d0e3" class="body">and value-chain background.</text>
+    <text x="778" y="327" fill="#73e2d0" class="label">BACKGROUND, NOT PROOF</text>
+  </g>
+
+  <g>
+    <rect x="54" y="405" width="610" height="205" rx="22" fill="#0e1c2e" stroke="#66d9bf" stroke-width="2"/>
+    <circle cx="96" cy="452" r="17" fill="#66d9bf"/>
+    <text x="130" y="460" fill="#f4f8ff" class="card-title">Investment Brain</text>
+    <text x="96" y="505" fill="#c0d0e3" class="body">Inquiry principles, causal frames, falsifiers, limits,</text>
+    <text x="96" y="532" fill="#c0d0e3" class="body">and abstention rules for a selected run.</text>
+    <text x="96" y="577" fill="#73e2d0" class="label">HOW TO THINK, NOT WHAT TO CLAIM</text>
+  </g>
+
+  <g>
+    <rect x="736" y="405" width="610" height="205" rx="22" fill="#0e1c2e" stroke="#ffd27c" stroke-width="2"/>
+    <circle cx="778" cy="452" r="17" fill="#ffd27c"/>
+    <text x="812" y="460" fill="#f4f8ff" class="card-title">Decision Memory</text>
+    <text x="778" y="505" fill="#c0d0e3" class="body">Past judgments, forecasts, postmortems, lessons,</text>
+    <text x="778" y="532" fill="#c0d0e3" class="body">and explicit improvement review.</text>
+    <text x="778" y="577" fill="#73e2d0" class="label">HUMAN-CONTROLLED REVIEW</text>
+  </g>
+</svg>

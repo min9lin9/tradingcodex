@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 840" role="img" aria-labelledby="title desc">
+  <title id="title">TradingCodex dynamic multi-agent workflow</title>
+  <desc id="desc">Head Manager receives a user question, selects a useful subset from nine individual agents, collects evidence, and loops back to reassess the next step.</desc>
+  <style>
+    .title { font-family: Arial, sans-serif; font-size: 36px; font-weight: 700; }
+    .subtitle { font-family: Arial, sans-serif; font-size: 19px; font-weight: 400; }
+    .label { font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 1.4px; }
+    .box-title { font-family: Arial, sans-serif; font-size: 23px; font-weight: 700; }
+    .role { font-family: Arial, sans-serif; font-size: 17px; font-weight: 700; }
+    .body { font-family: Arial, sans-serif; font-size: 15px; font-weight: 400; }
+    .small { font-family: Arial, sans-serif; font-size: 14px; font-weight: 400; }
+    .footer { font-family: Arial, sans-serif; font-size: 18px; font-weight: 700; }
+  </style>
+
+  <rect width="1400" height="840" rx="28" fill="#0b1627"/>
+  <path d="M0 135 H1400 M0 300 H1400 M0 465 H1400 M0 630 H1400" stroke="#b5cfff" stroke-opacity="0.05"/>
+  <path d="M90 0 V840 M440 0 V840 M790 0 V840 M1140 0 V840" stroke="#b5cfff" stroke-opacity="0.05"/>
+
+  <text x="70" y="72" fill="#f4f8ff" class="title">Dynamics: the team changes with the question</text>
+  <text x="70" y="108" fill="#afc1d8" class="subtitle">Head Manager selects the smallest useful set of agents, then lets evidence choose what happens next.</text>
+
+  <!-- Connectors are deliberately drawn before the cards so no line crosses a box. -->
+  <g fill="none" stroke="#68ddff" stroke-width="3" stroke-opacity="0.75">
+    <path d="M330 190 H485"/>
+    <path d="M700 250 V292"/>
+    <path d="M255 292 H1145" stroke-dasharray="8 10"/>
+    <path d="M255 292 V322"/>
+    <path d="M700 292 V322"/>
+    <path d="M1145 292 V322"/>
+    <path d="M255 386 V397 M700 386 V397 M1145 386 V397"/>
+    <path d="M255 397 H1145" stroke-dasharray="8 10"/>
+    <path d="M255 397 V408 M700 397 V408 M1145 397 V408"/>
+    <path d="M255 472 V483 M700 472 V483 M1145 472 V483"/>
+    <path d="M255 483 H1145" stroke-dasharray="8 10"/>
+    <path d="M255 483 V494 M700 483 V494 M1145 483 V494"/>
+  </g>
+
+  <g fill="none" stroke="#66d9bf" stroke-width="3" stroke-opacity="0.8">
+    <path d="M255 558 V610 M700 558 V610 M1145 558 V610"/>
+    <path d="M255 610 H1145"/>
+    <path d="M600 610 V660"/>
+    <path d="M840 705 H900" stroke="#b493ff" stroke-dasharray="8 8"/>
+    <path d="M888 698 L900 705 L888 712" stroke="#b493ff"/>
+  </g>
+
+  <g fill="none" stroke="#b493ff" stroke-width="3" stroke-opacity="0.85" stroke-dasharray="9 8">
+    <path d="M1300 705 H1375 V120 H700 V128"/>
+    <path d="M692 116 L700 128 L708 116" stroke-dasharray="none"/>
+  </g>
+
+  <g>
+    <rect x="70" y="145" width="260" height="90" rx="18" fill="#142a40" stroke="#66d9bf" stroke-width="2"/>
+    <text x="96" y="176" fill="#73e2d0" class="label">START</text>
+    <text x="96" y="208" fill="#f4f8ff" class="box-title">User question</text>
+    <text x="96" y="228" fill="#c0d0e3" class="small">outcome, scope, constraints</text>
+
+    <rect x="485" y="130" width="430" height="120" rx="22" fill="#1f4162" stroke="#68ddff" stroke-width="2"/>
+    <text x="520" y="166" fill="#8fe8ff" class="label">COORDINATOR</text>
+    <text x="520" y="205" fill="#f4f8ff" class="box-title">Head Manager</text>
+    <text x="520" y="232" fill="#c8d7ee" class="body">interpret -> select -> reassess -> synthesize</text>
+
+  </g>
+
+  <g>
+    <rect x="60" y="322" width="390" height="64" rx="16" fill="#14253c" stroke="#56dfff" stroke-width="1.5"/>
+    <text x="84" y="351" fill="#f4f8ff" class="role">Fundamental Analyst</text>
+    <text x="84" y="373" fill="#c0d0e3" class="small">business, financials, filings</text>
+    <rect x="505" y="322" width="390" height="64" rx="16" fill="#14253c" stroke="#56dfff" stroke-width="1.5"/>
+    <text x="529" y="351" fill="#f4f8ff" class="role">Technical Analyst</text>
+    <text x="529" y="373" fill="#c0d0e3" class="small">price, trend, volatility, liquidity</text>
+    <rect x="950" y="322" width="390" height="64" rx="16" fill="#14253c" stroke="#56dfff" stroke-width="1.5"/>
+    <text x="974" y="351" fill="#f4f8ff" class="role">News Analyst</text>
+    <text x="974" y="373" fill="#c0d0e3" class="small">disclosures, chronology, narrative</text>
+
+    <rect x="60" y="408" width="390" height="64" rx="16" fill="#14253c" stroke="#56dfff" stroke-width="1.5"/>
+    <text x="84" y="437" fill="#f4f8ff" class="role">Macro Analyst</text>
+    <text x="84" y="459" fill="#c0d0e3" class="small">rates, FX, policy transmission</text>
+    <rect x="505" y="408" width="390" height="64" rx="16" fill="#14253c" stroke="#56dfff" stroke-width="1.5"/>
+    <text x="529" y="437" fill="#f4f8ff" class="role">Instrument Analyst</text>
+    <text x="529" y="459" fill="#c0d0e3" class="small">ETF, options, crypto mechanics</text>
+    <rect x="950" y="408" width="390" height="64" rx="16" fill="#14253c" stroke="#56dfff" stroke-width="1.5"/>
+    <text x="974" y="437" fill="#f4f8ff" class="role">Valuation Analyst</text>
+    <text x="974" y="459" fill="#c0d0e3" class="small">ranges, scenarios, sensitivities</text>
+
+    <rect x="60" y="494" width="390" height="64" rx="16" fill="#14253c" stroke="#56dfff" stroke-width="1.5"/>
+    <text x="84" y="523" fill="#f4f8ff" class="role">Portfolio Manager</text>
+    <text x="84" y="545" fill="#c0d0e3" class="small">fit, sizing, concentration</text>
+    <rect x="505" y="494" width="390" height="64" rx="16" fill="#14253c" stroke="#56dfff" stroke-width="1.5"/>
+    <text x="529" y="523" fill="#f4f8ff" class="role">Risk Manager</text>
+    <text x="529" y="545" fill="#c0d0e3" class="small">downside, restrictions, readiness</text>
+    <rect x="950" y="494" width="390" height="64" rx="16" fill="#14253c" stroke="#56dfff" stroke-width="1.5"/>
+    <text x="974" y="523" fill="#f4f8ff" class="role">Judgment Reviewer</text>
+    <text x="974" y="545" fill="#c0d0e3" class="small">independent challenge, conflicts</text>
+  </g>
+
+  <g>
+    <rect x="360" y="670" width="480" height="90" rx="20" fill="#142b40" stroke="#66d9bf" stroke-width="2"/>
+    <text x="395" y="704" fill="#73e2d0" class="label">SHARED OUTPUT</text>
+    <text x="395" y="735" fill="#f4f8ff" class="box-title">Accepted evidence + artifacts</text>
+    <text x="395" y="753" fill="#c0d0e3" class="small">snapshots, datasets, reports, forecasts</text>
+
+    <rect x="900" y="670" width="400" height="90" rx="20" fill="#25203a" stroke="#b493ff" stroke-width="2"/>
+    <text x="935" y="704" fill="#c4a9ff" class="label">LOOP BACK</text>
+    <text x="935" y="735" fill="#f4f8ff" class="box-title">Reassess -&gt; Head Manager</text>
+    <text x="935" y="753" fill="#d5c8ed" class="small">follow up / add / review / stop</text>
+  </g>
+
+  <text x="70" y="805" fill="#f5e8f2" class="footer">No fixed team. No preset DAG. The next useful question chooses the next useful agent.</text>
+</svg>

@@ -66,11 +66,15 @@ section > p, .section-copy { max-width: 43rem; margin: 0 0 1.25rem; color: var(-
 .doc-content a:not(.doc-footer a):not(.sidebar-nav a):not(.on-this-page a) { color: var(--text); text-decoration-color: #545454; text-underline-offset: .18rem; }
 .doc-content a:not(.doc-footer a):not(.sidebar-nav a):not(.on-this-page a):hover { color: var(--accent); text-decoration-color: var(--accent); }
 
-.check-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--line); }
-.check-grid > div { min-height: 10.75rem; padding: 1rem; background: var(--surface); }
-.check-grid span { display: inline-block; margin-bottom: 2.4rem; color: var(--accent); font-family: var(--font-mono); font-size: .75rem; }
-.check-grid p { margin: 0; color: var(--muted); font-size: .82rem; line-height: 1.55; }
-.check-grid strong { color: var(--text); }
+.skill-start-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--line); }
+.skill-start-card { display: flex; min-width: 0; min-height: 17.5rem; flex-direction: column; padding: 1rem; color: var(--muted); background: var(--surface); text-decoration: none; }
+.skill-start-card:hover { background: var(--surface-hover); }
+.skill-card-number { display: inline-block; margin-bottom: 1.35rem; color: var(--accent); font-family: var(--font-mono); font-size: .75rem; }
+.skill-start-card strong { display: block; margin-bottom: .45rem; color: var(--text); font-size: .95rem; }
+.skill-start-card p { margin: 0; color: var(--muted); font-size: .8rem; line-height: 1.5; }
+.skill-start-card pre { margin: auto 0 0; padding: .65rem .7rem; border: 1px solid var(--line); border-radius: .35rem; background: #121212; font-size: .68rem; line-height: 1.5; }
+.skill-card-more { display: block; margin-top: .7rem; color: var(--accent); font-size: .72rem; }
+.section-link { margin-top: 1rem !important; font-size: .82rem; }
 .code-block, .example { overflow: hidden; margin: 1rem 0; border: 1px solid var(--line); border-radius: var(--radius); background: #151515; }
 .code-title, .example > p { display: flex; justify-content: space-between; margin: 0; padding: .53rem .8rem; color: var(--muted); border-bottom: 1px solid var(--line); background: #191919; font-family: var(--font-mono); font-size: .68rem; }
 .code-title span:last-child { color: var(--quiet); }
@@ -162,12 +166,15 @@ tbody tr:last-child td { border-bottom: 0; }
   .doc-header h1 { font-size: clamp(2.6rem, 14vw, 3.7rem); }
   .doc-header > p:last-child { font-size: 1rem; }
   section { padding-top: 2.35rem; }
-  .check-grid { grid-template-columns: 1fr; }
-  .check-grid > div { min-height: auto; }
-  .check-grid span { margin-bottom: 1rem; }
+  .skill-start-grid { grid-template-columns: 1fr; }
+  .skill-start-card { min-height: auto; }
+  .skill-card-number { margin-bottom: 1rem; }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; word-break: break-word; }
   .topic-list a { grid-template-columns: 1.75rem minmax(0, 1fr) auto; }
   .topic-list small { grid-column: 2 / -1; }
   .skill-block { grid-template-columns: 1fr; gap: 1rem; }
+  .skill-block > div, .field-list, .field-list dt, .field-list dd { min-width: 0; }
+  .field-list dt, .field-list dd { overflow-wrap: anywhere; }
   .field-list { grid-template-columns: 1fr; gap: .18rem; }
   .field-list dd { margin-bottom: .5rem; }
   .doc-footer { grid-template-columns: 1fr; }
