@@ -28,7 +28,10 @@ that needs fresh evidence or more than one distinct expertise.
    creates no child. Never wait for it: either dispatch a chosen role through
    `spawn_agent` or stop.
 3. Apply one explicitly selected Investment Brain or Strategy only as sealed
-   context. Do not infer, blend, inspect, or change one during the run.
+   context. Do not infer, blend, inspect, or change one during the run. When an
+   Investment Brain, Strategy, or Decision Memory source applies, read
+   [Context Overlays](playbooks/context-overlays.md) before applying it or
+   dispatching children.
 4. For fresh research, valuation, forecasts, recommendations, or material
    portfolio/risk judgment, read the
    [Research Framing playbook](playbooks/research-framing.md), find the smallest

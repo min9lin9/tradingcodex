@@ -1,95 +1,58 @@
 ---
 name: tcx-source-gate
-description: Route external investment research data and preserve concise SourceSnapshot/Dataset provenance. Use when a fixed-role TradingCodex analyst needs external facts, documents, prices, fundamentals, or time series.
+description: Route external investment evidence and preserve concise SourceSnapshot or Dataset provenance when a fixed-role analyst needs external facts, documents, prices, fundamentals, or time series.
 ---
 
 # Data Source Routing
 
-Use this order for each missing fact or series:
+For each material missing fact or series:
 
-1. Reuse a relevant SourceSnapshot or Dataset already supplied for the work.
+1. Reuse an adequate supplied SourceSnapshot or Dataset.
 2. Use one relevant enabled user Skill, Plugin, or MCP capability.
-3. Use the optional direct OpenBB MCP when it is projected for this role.
-4. Research original public records: company IR and filings for companies, exchanges for prices, central banks/statistics agencies for macro data, and regulators for regulatory facts.
-5. Use another reliable web source.
-6. State the remaining data gap clearly.
+3. Use direct optional OpenBB when projected for this role.
+4. Prefer an original public record when legal, accounting, regulatory,
+   contractual, filing, or official-policy status is material.
+5. Otherwise use a credible attributable source within its competence.
+6. Preserve an explicit gap when adequate support is unavailable.
 
-Treat this as a fallback preference, not a one-call budget or a requirement to
-ask Head Manager before every additional lookup. While answering the assigned
-question, investigate a newly discovered gap, contradiction, stale anchor, or
-identifier problem when it could materially change the conclusion, readiness,
-or confidence and remains within your specialty, the user's scope, and
-read-only authority. Choose the number and mix of useful sources
-proportionately; stop when another obtainable source is unlikely to change the
-answer. Do not gather broad just-in-case data or recreate another role's whole
-data family.
+Check reusable current-workflow IDs before an external call. Use the smallest
+call that can resolve the material gap. Do not repeat an unchanged successful
+or terminal request. Retain valid partial results and fetch only missing
+coverage. Do not recreate another role's data family or gather broad
+just-in-case data.
 
-Complete the reusable Snapshot/Dataset check before an external network call.
-For structured prices, OHLCV, fundamentals, estimates, or macro series, try one
-relevant callable direct OpenBB tool before public web or direct HTTP unless the
-user named another provider or a clearly relevant enabled capability. Generic
-web, browser, and shell HTTP access are public-web fallbacks, not step 2 user
-capabilities.
+Judge evidence against the claim, requested as-of, and consequence. OpenBB is
+access to its returned provider, not a source class. Credible institutional,
+provider-normalized, and reputable secondary evidence may support claims they
+competently cover. Secondary does not mean screen-only. Independently check a
+conclusion-driving claim when it is surprising, disputed, transformed, or
+weakly attributed. Do not require a fixed source count.
 
-Name the provider when a tool supports one. Do not call the same source again
-with unchanged inputs. A changed query or another source is appropriate when
-it resolves a material gap or conflict. When a source partially succeeds,
-retain its valid result and seek the unsupported field, identifier, or period
-without refetching what is already adequate. This is an operating procedure,
-not a service-side trust rating or a guarantee about third-party capabilities.
+A missing, stale, conflicting, or ambiguous field limits only dependent claims.
+Evidence readiness, confidence, and action readiness remain separate; evidence
+quality never creates order or execution authority.
 
-Judge evidence against the claim and intended use, not a provider label. Prefer
-an original public record when exact legal, regulatory, contractual,
-accounting, filing, or official-policy status is material. Otherwise use
-current attributable evidence for the fields and periods it supports. Treat
-OpenBB as access to its returned provider, not as a low-trust source class;
-verify provider, identifiers, period, units, adjustments, and coverage.
-Credible institutional data and reputable secondary reporting may support a
-conclusion when they are within the source's competence and have no unresolved
-material conflict. Secondary does not mean screen-only.
+Judge freshness against the requested as-of, publication or observation
+cadence, and relevant market session. An unavailable future period is not a
+gap. Preserve offset-free timestamps as ambiguous rather than inventing a
+timezone, and convert epoch values exactly once. A timing ambiguity limits only
+time-sensitive claims.
 
-Corroborate in proportion to consequence. Independently check a
-conclusion-driving claim when it is surprising, disputed, transformed from raw
-data, or weakly attributed; do not require a fixed source count for ordinary
-well-supported facts. One missing, stale, or ambiguous field invalidates only
-dependent claims. Use `evidence_readiness: decision-grade` when every
-conclusion-driving claim has fit-for-purpose support, the relevant market
-anchor is current, and material conflicts and gaps are explicit.
-Use `evidence_readiness: screen` or `insufficient` only when a material unresolved gap
-prevents responsible decision support, not merely because a primary source is
-absent. Record `action_readiness` and confidence separately from evidence
-readiness; evidence quality alone never creates order or execution authority.
+Use the current task's callable tools rather than a static inventory. Paid or
+cost-unknown access requires user approval. If a named tool is deferred, use
+one names-only exact-name lookup and inspect its schema once.
 
-Judge freshness relative to the requested as-of, the source's publication or
-observation cadence, the instrument or venue session when applicable, and the
-claim being made. The latest completed period can be the current usable anchor
-before a new period exists; expected absence before the next observation or
-release is not a data gap. Preserve offset-free provider timestamps as
-ambiguous raw values rather than adding a timezone, and convert epoch values
-exactly once. A timing ambiguity limits time-sensitive claims, not unrelated
-content from the same response.
+Continue only when another obtainable source has a credible path to changing
+the conclusion, confidence, or readiness and its expected decision value
+justifies the added work. Otherwise preserve the remaining gap and stop.
 
-Use the current task's callable tool surface rather than treating a static
-inventory as proof. Make the smallest relevant public, read-only call. Paid or
-cost-unknown access requires user approval.
+Use the active role skill for domain-specific filing, market-data, corporate
+action, instrument, timezone, and macro-vintage requirements. When using direct
+OpenBB, read [OpenBB MCP](references/openbb-mcp.md) before the call.
 
-If a named tool is deferred, use one names-only exact-name lookup, then inspect
-the selected exact name's schema once. Never print full tool records, scan
-descriptions, or repeat a schema lookup.
+Record every external source actually used with `record_source_snapshot`.
+Create a Dataset only for reusable structured rows or time series. Bind the
+returned Snapshot and Dataset IDs to the consuming artifact.
 
-For conclusion-relevant structured or point-in-time evidence, preserve enough
-context to interpret it: issuer identity and instrument/venue; unit, currency,
-and timezone; price or series raw-versus-adjusted posture and adjustment policy;
-filing accepted/published time, period, and amendment/restatement posture; and
-historical macro first-release/vintage versus current-revision posture. State
-the as-of/known-at/freshness posture and any empty, partial, stale, rate-limit,
-authentication, or entitlement warning. Surface material source conflicts and
-the remaining coverage gap. A narrow fact does not need this full context.
-
-If the selected route is direct OpenBB MCP, read
-[`references/openbb-mcp.md`](references/openbb-mcp.md) before the call. Do not
-load it for another route.
-
-Record every used external source with `record_source_snapshot`; preserve its provider, locator, as-of/known-at posture, payload hash, warnings, and a necessary excerpt. Create a Dataset only for reusable rows, time series, OHLCV, or financial tables; retain all used rows and bind the resulting Snapshot/Dataset IDs in the ResearchArtifact. A document, filing, news item, or qualitative source normally needs only a SourceSnapshot.
-
-Do not install, configure, classify, proxy, approve, or audit user capabilities or OpenBB. Never handle credential values. OpenBB remains optional, and its package, provider, and data terms remain the user's responsibility.
+Never install or configure providers, handle credential values, or treat
+capability availability as evidence quality.

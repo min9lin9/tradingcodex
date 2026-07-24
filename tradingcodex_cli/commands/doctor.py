@@ -135,13 +135,13 @@ def _guidance_checks(root: Path) -> list[dict[str, Any]]:
         path_check(root, "guidance", "AGENTS.md installed", "AGENTS.md", True),
         _codex_cli_runtime_check(),
         text_check(root, "guidance", "head-manager model instructions file configured", ".codex/config.toml", 'model_instructions_file = "prompts/base_instructions/head-manager.md"', True),
-        text_check(root, "guidance", "head-manager instructions installed", ".codex/prompts/base_instructions/head-manager.md", "You are the `head-manager` agent", True),
+        text_check(root, "guidance", "head-manager instructions installed", ".codex/prompts/base_instructions/head-manager.md", "You are the `head-manager` for TradingCodex", True),
         text_check(root, "guidance", "fixed-role base instructions installed", ".codex/prompts/base_instructions/fixed-role.md", "You are a fixed-role child in TradingCodex", True),
         *_launcher_checks(root),
         text_check(root, "guidance", "hooks configured", ".codex/hooks.json", "\"PreToolUse\"", True),
         text_check(root, "guidance", "session context configured", ".codex/hooks/tradingcodex_hook.py", "tradingcodex-session-context", True),
-        text_check(root, "guidance", "three-plane routing configured", ".codex/prompts/base_instructions/head-manager.md", "TradingCodex has three planes", True),
-        text_check(root, "guidance", "build gate configured", ".codex/prompts/base_instructions/head-manager.md", "Use `$tcx-build` only when it is the first meaningful invocation", True),
+        text_check(root, "guidance", "three-plane routing configured", ".codex/prompts/base_instructions/head-manager.md", "Route each request to one plane", True),
+        text_check(root, "guidance", "build gate configured", ".agents/skills/tcx-build/SKILL.md", "first meaningful line", True),
         text_check(root, "guidance", "brain management gate configured", ".agents/skills/tcx-brain/SKILL.md", "Require `$tcx-brain` on the first meaningful line", True),
         text_check(root, "guidance", "strategy management gate configured", ".agents/skills/tcx-strategy/SKILL.md", "`$tcx-strategy` on its first meaningful line", True),
         text_check(root, "guidance", "research profile keeps runtime state denied", ".codex/config.toml", '".tradingcodex" = "deny"', True),
@@ -1089,7 +1089,7 @@ def _improvement_checks(root: Path) -> list[dict[str, Any]]:
     checks.append(path_check(root, "improvement", "projection manifest projected", ".tradingcodex/generated/projection-manifest.json", False))
     checks.append(text_check(root, "improvement", "bounded evidence fallback installed", ".agents/skills/tcx-workflow/SKILL.md", "Only an unavailable\n   evidence-producing role may use a generic child", False))
     checks.append(text_check(root, "improvement", "decision quality review installed", ".agents/skills/tcx-workflow/SKILL.md", "high-consequence uncertainty", False))
-    checks.append(text_check(root, "improvement", "method profile routing installed", ".codex/prompts/base_instructions/head-manager.md", "listed-equity FCFF DCF", False))
+    checks.append(text_check(root, "improvement", "method profile routing installed", ".agents/skills/tcx-workflow/playbooks/research-framing.md", "listed-equity FCFF DCF", False))
     checks.append(text_check(root, "improvement", "Codex-native workflow skill installed", ".agents/skills/tcx-workflow/SKILL.md", "## Fast Path", False))
     checks.append(text_check(root, "improvement", "turn grant revocation hook installed", ".codex/hooks/tradingcodex_hook.py", "revoke_prior_order_turn", True))
     checks.append(text_check(root, "improvement", "native execution parser installed", ".codex/hooks/tradingcodex_hook.py", "parse_native_execution_invocation", True))

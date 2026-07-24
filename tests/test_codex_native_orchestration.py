@@ -70,9 +70,8 @@ def test_fixed_role_prompts_use_natural_evidence_distinctions() -> None:
     assert "Keep disposable work under `$TRADINGCODEX_SCRATCH`" in flat_base
     assert "never read audit records" in flat_base
     assert "treat the new request as a bounded delta" in flat_base
-    assert "collect additional evidence whenever a newly discovered gap or conflict" in flat_base
-    assert "do not need a follow-up from Head Manager naming every field or source first" in flat_base
-    assert "there is no fixed search or tool-call count" in flat_base
+    assert "expected decision value justifies the added work" in flat_base
+    assert "Preserve any conclusion-driving unresolved gap and lower readiness" in flat_base
     assert "retrieve the coverage needed to resolve the delta" in flat_base
     assert "answers the exact assigned question" in flat_base
     assert "If the requested delta belongs to another specialty" in flat_base
@@ -119,10 +118,9 @@ def test_fixed_role_prompts_use_natural_evidence_distinctions() -> None:
     assert "dependent repetition is not confirmation" in flat_framing
     assert "Turn each material uncertainty into an observable update" in flat_framing
     assert "fundamentally unknowable ones" in flat_framing
-    assert "Research quality and decision relevance take priority over resource economy" in flat_framing
-    assert "Tool-call count, context size, and latency alone are not stop conditions" in flat_framing
-    assert "deduplicated calls, compact artifact handoffs" in flat_framing
-    assert "explicit user scope or deadline requires it" in flat_framing
+    assert "Start with the smallest useful first wave" in flat_framing
+    assert "expected decision value justifies the added latency, context, tool use, or child work" in flat_framing
+    assert "preserve the gap and lower readiness" in flat_framing
 
 
 def test_child_briefs_and_artifact_skills_keep_capabilities_and_lineage_distinct() -> None:
@@ -245,6 +243,9 @@ def test_artifact_discovery_is_head_managed_and_fixed_roles_keep_exact_reads() -
     head_tools = set(AGENT_SPECS["head-manager"].mcp_allowlist)
     assert "list_research_artifacts" in head_tools
     assert "get_research_artifact" in head_tools
+    assert "record_source_snapshot" not in head_tools
+    assert "get_dataset_rows" not in head_tools
+    assert {"get_source_snapshot", "export_dataset_csv"}.issubset(head_tools)
     assert "head-manager" in TOOL_REGISTRY["list_research_artifacts"].allowed_roles
 
     for role in fixed_roles:
@@ -608,13 +609,13 @@ def test_generated_contract_inherits_root_model_and_keeps_role_profiles_optional
     assert "$tcx-source-gate" in fixed_role
     assert "Snapshot/Dataset/Artifact IDs" in fixed_role
     assert "do not duplicate or invent provider policy here" in fixed_role
-    assert "Django workflow plan" in head
-    assert "server-generated DAG" in head
+    assert "server-owned agent scheduler" in head
     assert "Answer narrow" in head
-    assert "Load\n`$tcx-workflow`" in head
-    assert "research-framing" in head
-    assert "Use `followup_task` to correct or clarify" in head
-    assert "$tcx-workflow` before using any fallback" in head
+    assert "$tcx-workflow" in head
+    assert "research-framing" not in head
+    assert "followup_task" not in head
+    assert "[Research Framing playbook](playbooks/research-framing.md)" in skill
+    assert "listed-equity FCFF DCF" in framing
     assert "canonical bundle" not in head
     assert "required taxonomy" not in head
     assert "causal crux" not in flat_head.lower()

@@ -301,6 +301,8 @@ def test_generated_projection_and_registry_keep_evidence_roles_narrow(tmp_path: 
     judgment_tools = set(tomllib.loads((workspace / ".codex/agents/judgment-reviewer.toml").read_text(encoding="utf-8"))["mcp_servers"]["tradingcodex"]["enabled_tools"])
     assert not (workspace / ".codex/agents/execution-operator.toml").exists()
     assert {"create_research_spec", "create_evaluation_corpus", "score_forecast", "list_artifact_catalog", "search_artifact_catalog", "rebuild_artifact_catalog", "export_dataset_csv"}.issubset(root_tools)
+    assert {"record_source_snapshot", "get_dataset_rows"}.isdisjoint(root_tools)
+    assert "get_source_snapshot" in root_tools
     assert {"create_causal_equity_analysis", "issue_forecast"}.issubset(valuation_tools)
     assert {"record_blind_judgment_prior", "complete_judgment_review", "resolve_forecast", "promote_lesson", "record_blind_human_review"}.issubset(judgment_tools)
     artifact_discovery_tools = {

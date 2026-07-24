@@ -23,6 +23,9 @@ This is a short operating procedure, not a service-side source-rating system or
 a guarantee about a third party. A role names the provider where possible, does
 not repeat an unchanged request to the same source, and keeps a partial result
 while asking the next source only for the missing field, identifier, or period.
+It continues only when another obtainable source has a credible path to
+changing the conclusion, confidence, or readiness and its expected decision
+value justifies the added work.
 TradingCodex does not install, classify, proxy, approve, or audit a user-owned
 capability. The normal research safety boundaries still apply: never expose a
 secret or mix research retrieval with account, order, or other mutation work.
@@ -71,14 +74,11 @@ epoch values are converted once; neither is repaired by inventing a timezone.
 A material missing slice that remains obtainable is fetched from the next
 relevant source or returned to its live owner before an evidence-gap abstention.
 
-The procedure adds point-in-time context only when structured or historical
-evidence matters to a conclusion. It preserves issuer identity and
-instrument/venue, unit/currency/timezone, raw-versus-adjusted price policy,
-filing timing/period/amendment posture, and macro first-release or vintage
-posture versus a current revision. It also makes as-of/known-at/freshness,
-empty/partial/stale/authentication/entitlement/rate-limit warnings, material
-conflicts, and remaining coverage gaps visible. Narrow facts do not carry a
-full evidence checklist.
+The common gate owns source choice, freshness, time ambiguity, bounded
+verification, and provenance. The active role skill owns domain-specific
+filing, market-data, corporate-action, instrument, and macro-vintage
+requirements. Together they preserve only the point-in-time context needed for
+the conclusion; narrow facts do not carry a full evidence checklist.
 
 ## Evidence records
 

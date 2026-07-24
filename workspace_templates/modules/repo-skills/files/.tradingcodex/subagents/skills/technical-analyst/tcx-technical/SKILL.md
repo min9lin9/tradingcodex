@@ -34,6 +34,8 @@ Decision quality fields when applicable:
 Role-specific quality:
 
 - State data date, timeframe, and whether price data is missing or stale.
+- State raw-versus-adjusted posture and the adjustment or corporate-action
+  policy when it can change the result.
 - Distinguish observation from trade recommendation.
 - Include invalidation or uncertainty instead of a one-way setup call.
 - Label stale or partial market data `screen-grade` or `not-decision-ready`

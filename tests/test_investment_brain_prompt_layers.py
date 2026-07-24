@@ -8,39 +8,41 @@ from tradingcodex_cli.generator import bootstrap_workspace
 ROOT = Path(__file__).resolve().parents[1]
 HEAD = ROOT / "workspace_templates/modules/codex-base/files/.codex/prompts/base_instructions/head-manager.md"
 SKILL_ROOT = ROOT / "workspace_templates/modules/repo-skills/files/.agents/skills/tcx-workflow"
+CONTEXT_OVERLAYS = SKILL_ROOT / "playbooks/context-overlays.md"
 
 
 def _flat(text: str) -> str:
     return " ".join(text.split())
 
 
-def test_head_manager_owns_typed_brain_translation_and_conflicts() -> None:
+def test_head_manager_routes_optional_context_to_owning_playbook() -> None:
     prompt = HEAD.read_text(encoding="utf-8")
+    overlays = CONTEXT_OVERLAYS.read_text(encoding="utf-8")
     flat_prompt = _flat(prompt)
+    flat_overlays = _flat(overlays)
 
-    for layer in (
-        "TradingCodex Core",
-        "current user mandate",
-        "Investor Context",
-        "Strategy",
-        "Investment Brain",
-        "Method skills",
-        "current-run evidence",
-        "Decision Memory",
+    for route in (
+        "$tcx-workflow",
+        "$tcx-brain",
+        "$tcx-strategy",
+        "$tcx-memory",
+        "$tcx-wiki",
+        "$tcx-automate",
     ):
-        assert layer in prompt
+        assert route in prompt
 
-    assert "one exact projected" in flat_prompt
-    assert "waiting_for_investment_brain" in flat_prompt
-    assert "Translate the selected Brain's platform-neutral questions" in flat_prompt
-    assert "Do not let the Brain name the team" in flat_prompt
-    assert "Strategy's decision rule" in flat_prompt
-    assert "authenticated evidence control factual claims" in flat_prompt
-    assert "independent current-run evidence view" in flat_prompt
-    assert "post-memory decision" in flat_prompt
-    assert "caller-authored Brain lineage" in flat_prompt
-    assert "compact frame derived from the mandate" in flat_prompt
-    assert "may overturn a conclusion under that frame but cannot replace the frame" in flat_prompt
+    assert "Authenticated current-run evidence controls factual claims" in flat_prompt
+    assert "never create tools, roles, evidence, approval, or execution authority" in flat_prompt
+    assert "waiting_for_investment_brain" not in prompt
+    assert "investment_brain_binding" not in prompt
+    assert "strategy_binding" not in prompt
+
+    assert "waiting_for_investment_brain" in overlays
+    assert "investment_brain_binding" in overlays
+    assert "strategy_binding" in overlays
+    assert "Do not let the Brain name the team" in flat_overlays
+    assert "Strategy's decision rule" in flat_overlays
+    assert "independent current-run view before Decision Memory" in flat_overlays
 
 
 def test_tcx_workflow_keeps_context_and_routing_native() -> None:
@@ -53,6 +55,7 @@ def test_tcx_workflow_keeps_context_and_routing_native() -> None:
 
     assert "investment research, valuation, forecasts, recommendations, portfolio or risk review, order preparation, approval review, and execution status" in flat_skill
     assert "Apply one explicitly selected Investment Brain or Strategy" in flat_skill
+    assert "[Context Overlays](playbooks/context-overlays.md)" in skill
     assert "Use an exact fixed role when one is available" in flat_skill
     assert "Only an unavailable evidence-producing role may use a generic child" in flat_skill
     assert "Do not replace an independent `risk-manager` or `judgment-reviewer` review" in flat_skill
@@ -85,9 +88,9 @@ def test_tcx_workflow_keeps_context_and_routing_native() -> None:
     assert "Judge corroboration by independence, diagnostic value, and position in the causal chain" in flat_framing
     assert "dependent repetition is not confirmation" in flat_framing
     assert "Turn each material uncertainty into an observable update" in flat_framing
-    assert "Research quality and decision relevance take priority over resource economy" in flat_framing
-    assert "Tool-call count, context size, and latency alone are not stop conditions" in flat_framing
-    assert "explicit user scope or deadline requires it" in flat_framing
+    assert "Start with the smallest useful first wave" in flat_framing
+    assert "expected decision value justifies the added latency, context, tool use, or child work" in flat_framing
+    assert "preserve the gap and lower readiness" in flat_framing
     assert "After an authenticated Head Manager `synthesis_report` receipt" in skill
     assert "Resolve the returned `path` against the current workspace root" in flat_skill
     assert "[Open final research report](/absolute/path/to/report.md)" in skill
@@ -115,10 +118,17 @@ def test_generated_workspace_projects_brain_context_contract(tmp_path: Path) -> 
         workspace
         / ".agents/skills/tcx-workflow/playbooks/research-framing.md"
     ).read_text(encoding="utf-8")
+    generated_overlays = (
+        workspace
+        / ".agents/skills/tcx-workflow/playbooks/context-overlays.md"
+    ).read_text(encoding="utf-8")
 
-    assert "investment_brain_binding" in generated_head
-    assert "waiting_for_investment_brain" in generated_head
+    assert "investment_brain_binding" not in generated_head
+    assert "waiting_for_investment_brain" not in generated_head
     assert "Apply one explicitly selected Investment Brain or Strategy" in generated_skill
+    assert "[Context Overlays](playbooks/context-overlays.md)" in generated_skill
+    assert "investment_brain_binding" in generated_overlays
+    assert "waiting_for_investment_brain" in generated_overlays
     assert "## Feedback Loop" in generated_skill
     assert "Illustrative ownership examples" in generated_skill
     assert "[Open final research report](/absolute/path/to/report.md)" in generated_skill

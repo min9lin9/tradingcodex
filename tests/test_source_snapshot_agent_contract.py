@@ -193,24 +193,19 @@ def test_source_snapshot_api_tool_and_role_instructions_align() -> None:
     assert "SourceSnapshot" in source_gate
     assert "Dataset" in source_gate
     assert "OpenBB" in source_gate
-    assert "company IR and filings" in source_gate
-    assert "issuer identity and instrument/venue" in source_gate
-    assert "first-release/vintage" in source_gate
     assert "references/openbb-mcp.md" in source_gate
-    assert "before an external network call" in source_gate
-    assert "Generic\nweb, browser, and shell HTTP access are public-web fallbacks" in source_gate
-    assert "against the claim and intended use, not a provider label" in source_gate
-    assert "Treat\nOpenBB as access to its returned provider" in source_gate
+    assert "before an external call" in source_gate
+    assert "Do not repeat an unchanged successful" in source_gate
+    assert "Judge evidence against the claim, requested as-of, and consequence" in source_gate
+    assert "OpenBB is\naccess to its returned provider" in source_gate
     assert "Secondary does not mean screen-only" in source_gate
-    assert "do not require a fixed source count" in source_gate
-    assert "not a one-call budget" in source_gate
-    assert "newly discovered gap, contradiction, stale anchor, or\nidentifier problem" in source_gate
-    assert "number and mix of useful sources" in source_gate
-    assert "another source is appropriate when\nit resolves a material gap or conflict" in source_gate
-    assert "Use `evidence_readiness: decision-grade` when every\nconclusion-driving claim" in source_gate
-    assert "not merely because a primary source is\nabsent" in source_gate
-    assert "latest completed period can be the current usable anchor" in source_gate
-    assert "convert epoch values\nexactly once" in source_gate
+    assert "Do not require a fixed source count" in source_gate
+    assert "convert epoch values exactly once" in source_gate
+    assert "expected decision value" in source_gate
+    assert "domain-specific filing, market-data, corporate" in source_gate
+    assert "filing accepted/published" not in source_gate
+    assert "historical macro first-release" not in source_gate
+    assert "raw-versus-adjusted posture and adjustment policy" not in source_gate
     assert "downgrade only the conclusions or actions" in data_qc
     assert "an unavailable future period is not\n  stale data" in data_qc
     openbb_reference = (
@@ -240,10 +235,12 @@ def test_source_snapshot_api_tool_and_role_instructions_align() -> None:
     assert "mixed source classes are allowed" in collect_evidence
     assert "independent of readiness" in collect_evidence
     assert "identifier/accession" in fundamental
+    assert "accepted or published time" in fundamental
     assert "provider-normalized or secondary evidence does not trigger an automatic" in fundamental
     assert "first-release, vintage, or real-time-period" in macro
     assert "without a primary\n  duplicate" in macro
     assert "Provider-derived data is not an\n  automatic downgrade" in technical
+    assert "raw-versus-adjusted posture" in technical
     assert "verified OpenBB/provider-normalized fundamentals" in valuation
     assert "Do not downgrade solely because adequate evidence\n  is provider-derived or secondary" in valuation
     assert "They may support a final conclusion without a primary" in judgment

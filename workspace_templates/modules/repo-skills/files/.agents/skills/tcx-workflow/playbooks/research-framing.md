@@ -10,6 +10,10 @@ is underspecified, include only causally adjacent factors likely to change the
 answer or readiness, including important points the user may not know to ask
 about; never widen the outcome or action authority.
 
+Choose a compatible method profile: general evidence, event research, quant
+signal, or listed-equity FCFF DCF. Preserve a method gap instead of forcing an
+incompatible profile.
+
 For a horizon-sensitive directional forecast, resolve the relevant market
 session and separate instrument-specific from market-wide drivers before
 choosing roles. At one market session or less, presume market-wide regime or
@@ -39,11 +43,14 @@ repeated claims to their origin; dependent repetition is not confirmation.
 
 Turn each material uncertainty into an observable update: what observation
 would affect which causal link and in which direction. Separate unresolved but
-observable gaps from fundamentally unknowable ones. Research quality and
-decision relevance take priority over resource economy. Continue while a
-material uncertainty remains and relevant evidence is obtainable within the
-user's scope and authority. Tool-call count, context size, and latency alone
-are not stop conditions; manage them with deduplicated calls, compact artifact
-handoffs, and parallel independent work. Stop only when no remaining in-scope
-question is likely to change the answer or readiness, the needed evidence is
-unavailable, or an explicit user scope or deadline requires it.
+observable gaps from fundamentally unknowable ones.
+
+Start with the smallest useful first wave. Continue only when the next
+obtainable question has a credible path to changing the conclusion, confidence,
+or readiness and its expected decision value justifies the added latency,
+context, tool use, or child work. Expand roles or sources after accepted
+evidence exposes a material gap, not merely because another perspective or
+source could exist. Stop when expected marginal decision value is low, the
+needed evidence is unavailable, or the user's scope or deadline requires it.
+If a conclusion-driving uncertainty remains, preserve the gap and lower
+readiness rather than presenting the result as decision-grade.
